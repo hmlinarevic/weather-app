@@ -11,7 +11,9 @@ const forecast = (lat, lon, callback) => {
 			const { temperature, weather_descriptions } = body.current;
 			callback(
 				undefined,
-				`${temperature}℃  and ${weather_descriptions[0].toLowerCase()}`
+				`${temperature}℃  and ${weather_descriptions[0].toLowerCase()}. ${
+					body.location.localtime
+				}`
 			);
 		}
 	});
